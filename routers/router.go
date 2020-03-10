@@ -20,8 +20,8 @@ func init() {
 	beego.Router("/read/:key/search", &controllers.DocumentController{}, "post:Search")
 
 	//搜索
-	beego.Router("/search", &controllers.SearchController{}, "get:Search")
-	beego.Router("/search/result", &controllers.SearchController{}, "get:Result")
+	beego.Router("/search", &controllers.ElasticsearchController{}, "get:Search")
+	beego.Router("/search/result", &controllers.ElasticsearchController{}, "get:Result")
 
 	//login
 	beego.Router("/login", &controllers.AccountController{}, "*:Login")

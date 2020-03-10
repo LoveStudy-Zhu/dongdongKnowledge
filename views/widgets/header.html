@@ -5,7 +5,7 @@
                 <button class="btn btn-default dropdown-toggle hidden-lg" type="button" data-toggle="dropdown"><i class="fa fa-align-justify"></i></button>
                 <ul class="dropdown-menu" role="menu">
                     <li>
-                        <a href="{{urlfor "SearchController.Search"}}" class="visible-xs visible-sm" title="搜索"><i class="fa fa-search"></i> 搜索</a>
+                        <a href="{{urlfor "ElasticsearchController.Search"}}" class="visible-xs visible-sm" title="搜索"><i class="fa fa-search"></i> 搜索</a>
                     </li>
                 {{if gt .Member.MemberId 0}}
                     <li>
@@ -43,7 +43,7 @@
 
                 {{if .IsSearch}}{{else}}
                     <div class="searchbar pull-left">
-                        <form class="form-inline" action="{{urlfor "SearchController.Result"}}" method="get">
+                        <form class="form-inline" action="{{urlfor "ElasticsearchController.Result"}}" method="get">
                             <input class="form-control" name="wd" type="search"  placeholder="书籍搜索..." value="{{.Keyword}}">
                             <button class="search-btn">
                                 <i class="fa fa-search"></i>

@@ -37,8 +37,8 @@
             <div class="col-sm-8 col-xs-12 result-list">
                 <div class="help-block">本次搜索耗时 <span class="text-danger">{{.SpendTime}}</span> 秒，为您搜索到  <span class="text-success">{{.TotalRows}}</span> 个相关结果.</div>
                 <ul class="nav nav-tabs">
-                    <li {{if eq $.Tab "book"}}class="active"{{end}}><a href="{{urlfor "SearchController.Result"}}?wd={{$.Wd}}&tab=book">搜书籍</a></li>
-                    <li {{if eq $.Tab "doc"}}class="active"{{end}}><a href="{{urlfor "SearchController.Result"}}?wd={{$.Wd}}&tab=doc">搜文档</a></li>
+                    <li {{if eq $.Tab "book"}}class="active"{{end}}><a href="{{urlfor "ElasticsearchController.Result"}}?wd={{$.Wd}}&tab=book">搜书籍</a></li>
+                    <li {{if eq $.Tab "doc"}}class="active"{{end}}><a href="{{urlfor "ElasticsearchController.Result"}}?wd={{$.Wd}}&tab=doc">搜文档</a></li>
                 </ul>
                 {{if eq $.Tab "book"}}
                 <ul >
@@ -62,7 +62,7 @@
                     </li>
                     {{else}}
                         <li class="clearfix">
-                            <div class="help-block">啊哦，没搜到相关书籍，<a style="font-weight: 600;color: #06f;" href="{{urlfor "SearchController.Result"}}?wd={{$.Wd}}&tab=doc">搜文档</a> 试下？</div>
+                            <div class="help-block">啊哦，没搜到相关书籍，<a style="font-weight: 600;color: #06f;" href="{{urlfor "ElasticsearchController.Result"}}?wd={{$.Wd}}&tab=doc">搜文档</a> 试下？</div>
                         </li>
                     {{end}}
 
